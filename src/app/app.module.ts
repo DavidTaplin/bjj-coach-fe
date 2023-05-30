@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { RoutingModule } from './routing.module';
-import { SignupComponent } from './signup/signup.component';
+import { SignupComponent } from './Auth/signup/signup.component';
 import { ApiService } from './api.service';
 
 @NgModule({
