@@ -6,7 +6,7 @@ import { ApiService } from 'src/app/Services/api.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
       email: '',
-      password: ''
+      password: '',
     });
   }
 
@@ -28,17 +28,16 @@ export class LoginComponent implements OnInit {
     const { email, password } = this.loginForm.value;
     const loginCredentials = { email, password };
 
-    this.apiService.login(loginCredentials).subscribe(response => {
-      // Handle the login response
-      this.router.navigate(['']); // Redirect to the dashboard after successful login
-      console.log('login was successful')
-    },
-    error => {
-      // Handle login error
-      console.error('Login failed:', error);
-    }
-  );
+    this.apiService.login(loginCredentials).subscribe(
+      (response) => {
+        // Handle the login response
+        this.router.navigate(['']); // Redirect to the dashboard after successful login
+        console.log('login was successful', response);
+      },
+      (error) => {
+        // Handle login error
+        console.error('Login failed:', error);
+      }
+    );
+  }
 }
-}
-
-
