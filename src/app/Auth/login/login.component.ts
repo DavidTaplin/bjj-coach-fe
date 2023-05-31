@@ -28,10 +28,13 @@ export class LoginComponent implements OnInit {
     const { email, password } = this.loginForm.value;
     const loginCredentials = { email, password };
 
+    // this.apiService.login(loginCredentials).subscribe(response => {
+
     this.apiService.login(loginCredentials).subscribe(
       (response) => {
         // Handle the login response
         this.router.navigate(['']); // Redirect to the dashboard after successful login
+        //console.log('login was successful');
         console.log('login was successful', response);
       },
       (error) => {
