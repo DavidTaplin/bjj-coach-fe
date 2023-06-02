@@ -7,12 +7,15 @@ import { RoutingModule } from './routing.module';
 import { SignupComponent } from './Auth/signup/signup.component';
 import { ApiService } from './Services/api.service';
 import { LoginComponent } from './Auth/login/login.component';
-
+import { LogoutComponent } from './Auth/logout/logout.component';
+import { NaviComponent } from './shared/navi/navi.component';
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    LogoutComponent,
+    NaviComponent
   ],
   imports: [
     BrowserModule,
