@@ -9,13 +9,20 @@ import { ApiService } from './Services/api.service';
 import { LoginComponent } from './Auth/login/login.component';
 import { LogoutComponent } from './Auth/logout/logout.component';
 import { NaviComponent } from './shared/navi/navi.component';
+import { HomeComponent } from './home/home.component';
+import { ProfessorComponent } from './professor/professor.component';
+import { MovelistComponent } from './movelist/movelist.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
     LoginComponent,
     LogoutComponent,
-    NaviComponent
+    NaviComponent,
+    HomeComponent,
+    ProfessorComponent,
+    MovelistComponent
   ],
   imports: [
     BrowserModule,
