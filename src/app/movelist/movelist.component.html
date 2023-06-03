@@ -1,8 +1,9 @@
 <h1 style="text-align: center ;">Move List</h1>
 
 <ul>
-  <li *ngFor=" let move or moves">
-    {{ move.name}}
+  <li *ngFor=" let move of moves">
+    {{ move.id }},
+    {{ move.name}},
     {{ move.position }}
 
   </li>
