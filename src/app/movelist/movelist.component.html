@@ -1,10 +1,29 @@
-<h1 style="text-align: center ;">Move List</h1>
+<h1 style="text-align: center;">Move List</h1>
 
 <ul>
-  <li *ngFor=" let move of moves">
+  <li *ngFor="let move of moves">
     {{ move.id }},
-    {{ move.name}},
+    {{ move.name }},
     {{ move.position }}
-
   </li>
 </ul>
+
+<form *ngIf="moveForm" [formGroup]="moveForm" (ngSubmit)="addMove()">
+
+  <div>
+    <label for="id">ID:</label>
+    <input type="number" id="id" formControlName="id" required>
+  </div>
+
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" formControlName="name" required>
+  </div>
+
+  <div>
+    <label for="position">Position:</label>
+    <input type="text" id="position" formControlName="position" required>
+  </div>
+
+  <button type="submit">Add Move</button>
+</form>
