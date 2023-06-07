@@ -5,6 +5,7 @@ interface Move {
   id: number;
   name: string;
   position: string;
+  grip: string;
 }
 
 @Component({
@@ -15,9 +16,9 @@ interface Move {
 export class MovelistComponent implements OnInit {
 
   moves: Move[] = [
-    { id: 1, name: "Kimura", position: "closed guard" },
-    { id: 2, name: "Cross Collar Choke", position: "closed guard" },
-    { id: 3, name: "Arm Triangle", position: "closed guard" },
+    { id: 1, name: "Kimura", position: "closed guard", grip:'collar and elbow' },
+    { id: 2, name: "Cross Collar Choke", position: "closed guard", grip: "collar" },
+    { id: 3, name: "scissor sweep", position: "closed guard", grip: "collar and elbow"},
   ];
 
   moveForm: FormGroup | null = null; // Initialize with null
@@ -28,7 +29,8 @@ export class MovelistComponent implements OnInit {
     this.moveForm = this.formBuilder.group({
       id: ['', Validators.required],
       name: ['', Validators.required],
-      position: ['', Validators.required]
+      position: ['', Validators.required],
+      grip: ['', Validators.required]
     });
   }
 
@@ -37,7 +39,8 @@ export class MovelistComponent implements OnInit {
       const newMove: Move = {
         id: this.moveForm.controls['id'].value,
         name: this.moveForm.controls['name'].value,
-        position: this.moveForm.controls['position'].value
+        position: this.moveForm.controls['position'].value,
+        grip: this.moveForm.controls['grip'].value
       };
 
       this.moves.push(newMove);

@@ -4,7 +4,8 @@
   <li *ngFor="let move of moves">
     {{ move.id }},
     {{ move.name }},
-    {{ move.position }}
+    {{ move.position }},
+    {{ move.grip}}
   </li>
 </ul>
 
@@ -23,6 +24,11 @@
   <div>
     <label for="position">Position:</label>
     <input type="text" id="position" formControlName="position" required>
+  </div>
+
+  <div>
+    <label for="grip">Grip:</label>
+    <input type="text" id="grip" formControlName="grip" required>
   </div>
 
   <button type="submit">Add Move</button>
